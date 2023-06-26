@@ -23,10 +23,11 @@ namespace ConsoleApp1
             {
                 string query = @"SELECT * FROM dbo.Produtos";
 
+
+                //Select
                 var listaProd = conn.Query<Produtos>(query).ToList();
 
-                var a = conn.Insert<Produtos>(new Produtos {Preco = 22.43m,Nome = "TesteeDapper", Descricao = "TestandoDapper", DataFrabricacao = DateTime.Now, DataValidade = DateTime.Now});
-
+              
             }
         }
 
@@ -45,7 +46,17 @@ namespace ConsoleApp1
 
                 //Console.WriteLine(getId);
                 getAll.ForEach(Console.WriteLine);
-                
+
+                //Insert
+                //conn.Insert<Produtos>(new Produtos {Preco = 22.43m,Nome = "TesteeDapper", Descricao = "TestandoDapper", DataFrabricacao = DateTime.Now, DataValidade = DateTime.Now});
+
+
+                //Update
+                //conn.Update<Produtos>(new Produtos { Id = 1005, Nome = "Alterado pelo dapper", Descricao = "dapper teste", Preco = 33.3m, DataFrabricacao = DateTime.Now, DataValidade = DateTime.Now });
+
+                //Delete
+                //conn.Delete<Produtos>(new Produtos { Id = 1007});
+
             }
         }
     }
